@@ -742,48 +742,33 @@
       display: none;
     }
 
-    /* Floating badge on doctor photo */
+    /* Profile details block under the doctor photo */
     .doctor-badge {
-      position: absolute;
-      bottom: 32px;
-      right: -16px;
-      background: var(--white);
-      padding: 14px 18px;
+      margin-top: 16px;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 249, 255, 0.95));
+      padding: 18px 20px;
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow-lg);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      max-width: 240px;
+      box-shadow: var(--shadow-sm);
       border: 1px solid var(--border);
-    }
-
-    .doctor-badge-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 11px;
-      background: linear-gradient(135deg, var(--green-soft), var(--cyan-soft));
-      display: grid;
-      place-items: center;
-      color: var(--teal-deep);
-      font-size: 17px;
-      flex-shrink: 0;
+      max-width: 100%;
     }
 
     .doctor-badge-text {
-      font-size: 12px;
-      line-height: 1.4;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--ink-soft);
     }
 
     .doctor-badge-text strong {
       display: block;
-      font-size: 13px;
+      font-size: 15px;
       color: var(--teal-deep);
       font-weight: 700;
+      margin-bottom: 6px;
     }
 
-    .doctor-badge-text span {
-      color: var(--muted);
+    .doctor-badge-text p {
+      margin: 0;
     }
 
     /* Small availability pill on photo */
@@ -838,6 +823,7 @@
       section {
         padding: 70px 0;
       }
+
       .mob_mt_20 {
         margin-top: 30px;
       }
@@ -1545,6 +1531,46 @@
       transform: translateY(-1px);
     }
 
+    .chamber-map-card {
+      margin-top: 32px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chamber-map-card h4 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: var(--teal-deep);
+    }
+
+    .chamber-map-card p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .chamber-map-frame {
+      width: 100%;
+      min-height: 320px;
+      border: 0;
+      border-radius: var(--radius-md);
+      box-shadow: inset 0 0 0 1px rgba(13, 77, 86, 0.08);
+    }
+
+    @media (max-width: 600px) {
+      .chamber-map-card {
+        padding: 18px;
+      }
+
+      .chamber-map-frame {
+        min-height: 260px;
+      }
+    }
+
     /* ===================================================
        11. CONTACT
        =================================================== */
@@ -1866,6 +1892,10 @@
       background: linear-gradient(135deg, var(--teal-deep), var(--teal-light));
     }
 
+    .float-btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #128c7e);
+    }
+
     .float-btn:hover {
       transform: translateY(-3px) scale(1.03);
       box-shadow: 0 20px 45px rgba(13, 77, 86, 0.4);
@@ -1982,6 +2012,36 @@
 
       html {
         scroll-behavior: auto;
+      }
+    }
+
+    /* wapp */
+    .whatsapp-float {
+      position: fixed;
+      left: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      text-decoration: none;
+    }
+
+    .whatsapp-float img {
+      width: 22px;
+      height: 22px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 20px 45px rgba(18, 140, 126, 0.35);
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-float span {
+        display: none;
+      }
+
+      .whatsapp-float {
+        padding: 14px;
       }
     }
   </style>
@@ -2106,12 +2166,15 @@
             </div>
 
             <div class="doctor-badge">
-              <div class="doctor-badge-icon">
-                <i class="fas fa-user-md" aria-hidden="true"></i>
-              </div>
               <div class="doctor-badge-text">
-                <strong>Dr. Rizvi</strong>
-                <span>MBBS, CCD, MACP</span>
+                <strong>Dr. Md. Mashiour Rahman Rikabder (Rizvi)</strong>
+                <p>Associate Professor</p>
+                <p>General Physician &amp; Diabetologist</p>
+                <p>MBBS (SMAMC)</p>
+                <p>CCD (BIRDEM) | MCPS (Family Medicine)</p>
+                <p>DFM (BMU) | MACP (USA)</p>
+                <p>Fellowship in Sexual Medicine (Chennai, India)</p>
+                <p>Jahurul Islam Medical College &amp; Hospital</p>
               </div>
             </div>
           </div>
@@ -2454,6 +2517,13 @@
           </div>
         </div>
       </div>
+      <div class="chamber-map-card" data-reveal>
+        <h4>Find the chamber on the map</h4>
+        <p>Shibpur Diabetic &amp; General Hospital, College Gate, Shibpur, Narsingdi.</p>
+        <iframe class="chamber-map-frame"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.8363644439128!2d90.7351212!3d24.036834900000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37542f2e6e23fe0b%3A0xa5962cdb2c34bc61!2sShibpur%20Diabetic%20%26%20General%20Hospital!5e0!3m2!1sen!2sbd!4v1783587670363!5m2!1sen!2sbd"
+          allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
     </div>
   </section>
 
@@ -2569,6 +2639,13 @@
       </div>
     </div>
   </footer>
+
+  <a href="https://wa.me/8801914319181?text=Assalamu%20Alaikum%20Doctor%2C%20I%20would%20like%20to%20book%20an%20appointment."
+    class="float-btn float-btn-whatsapp whatsapp-float" target="_blank" aria-label="Contact doctor on WhatsApp">
+    <span class="pulse-ring" aria-hidden="true"></span>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+    <span>Book Appointment</span>
+  </a>
 
   <!-- ===================================================
        FLOATING ACTION BUTTONS
